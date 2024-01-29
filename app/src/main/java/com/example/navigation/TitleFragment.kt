@@ -10,9 +10,16 @@ import com.example.navigation.databinding.FragmentTitleBinding
 
 
 class TitleFragment : Fragment() {
+    lateinit var binding: FragmentTitleBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        val bind: FragmentTitleBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_title, container, false)
-        return bind.root
+        val binding: FragmentTitleBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_title, container, false)
+        return binding.root
+        binding.playButton.setOnClickListener{
+            function()
+        }
+    }
+    fun function(){
+        binding.playButton.text = "Next"
     }
 }

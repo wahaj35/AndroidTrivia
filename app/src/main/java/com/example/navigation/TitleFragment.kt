@@ -14,12 +14,9 @@ class TitleFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val binding: FragmentTitleBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_title, container, false)
+        binding.playButton.setOnClickListener { binding.playButton.text = "Start" }
         return binding.root
-        binding.playButton.setOnClickListener{
-            Function()
-        }
+
     }
-    fun Function(){
-        binding.playButton.text = "Next"
-    }
+
 }

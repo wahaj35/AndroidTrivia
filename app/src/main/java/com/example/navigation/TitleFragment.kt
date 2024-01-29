@@ -16,10 +16,10 @@ class TitleFragment : Fragment() {
         val binding: FragmentTitleBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_title, container, false)
         return binding.root
         binding.playButton.setOnClickListener{
-            function()
+            Function()
         }
     }
-    fun function(){
+    fun Function(){
         binding.playButton.text = "Next"
     }
 }

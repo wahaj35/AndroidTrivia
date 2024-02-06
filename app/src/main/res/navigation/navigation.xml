@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/HomeScreen">
+    <fragment
+        android:id="@+id/GameOver"
+        android:name="com.example.navigation.GameOverFragment"
+        android:label="fragment_game_over"
+        tools:layout="@layout/fragment_game_over" />
+    <fragment
+        android:id="@+id/Game"
+        android:name="com.example.navigation.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment2_to_gameOverFragment2"
+            app:destination="@id/GameOver"
+            app:popUpTo="@id/HomeScreen" />
+        <action
+            android:id="@+id/action_gameFragment2_to_gameWonFragment2"
+            app:destination="@id/GameWon"
+            app:popUpTo="@id/HomeScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/HomeScreen"
+        android:name="com.example.navigation.TitleFragment"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_title" >
+        <action
+            android:id="@+id/action_titleFragment2_to_gameFragment2"
+            app:destination="@id/Game" />
+    </fragment>
+    <fragment
+        android:id="@+id/GameWon"
+        android:name="com.example.navigation.GameWonFragment"
+        android:label="fragment_game_won"
+        tools:layout="@layout/fragment_game_won" />
+</navigation>

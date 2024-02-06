@@ -1,19 +1,20 @@
 package com.example.navigation
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.example.navigation.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {
     data class Question(
         val text: String,
         val answers: List<String>)
-
+    lateinit var binding: FragmentGameBinding
     // The first answer is the correct one.  We randomize the answers before showing the text.
     // All questions must have four answers.  We'd want these to contain references to string
     // resources so we could internationalize. (or better yet, not define the questions in code...)
@@ -49,14 +50,13 @@ class GameFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         // Inflate the layout for this fragment
-        val binding = DataBindingUtil.inflate<FragmentGameBinding>(
-            inflater, R.layout.fragment_game, container, false)
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_game,container,false)
 
         // Shuffles the questions and sets the question index to the first question.
         randomizeQuestions()
 
         // Bind this fragment class to the layout
-//        binding.game = this
+        binding.game = this
 
         // Set the onClickListener for the submitButton
         binding.submitButton.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER")
@@ -81,9 +81,11 @@ class GameFragment : Fragment() {
                         binding.invalidateAll()
                     } else {
                         // We've won!  Navigate to the gameWonFragment.
+                        Navigation.findNavController(view).navigate(R.id.action_gameFragment2_to_gameWonFragment2)
                     }
                 } else {
                     // Game over! A wrong answer sends us to the gameOverFragment.
+                    Navigation.findNavController(view).navigate(R.id.action_gameFragment2_to_gameOverFragment2)
                 }
             }
         }
@@ -108,4 +110,3 @@ class GameFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_android_trivia_question, questionIndex + 1, numQuestions)
     }
 }
-

@@ -7,12 +7,12 @@
     <fragment
         android:id="@+id/GameOver"
         android:name="com.example.navigation.GameOverFragment"
-        android:label="fragment_game_over"
+        android:label="Game Over"
         tools:layout="@layout/fragment_game_over" />
     <fragment
         android:id="@+id/Game"
         android:name="com.example.navigation.GameFragment"
-        android:label="fragment_game"
+        android:label="Game"
         tools:layout="@layout/fragment_game" >
         <action
             android:id="@+id/action_gameFragment2_to_gameOverFragment2"
@@ -26,7 +26,7 @@
     <fragment
         android:id="@+id/HomeScreen"
         android:name="com.example.navigation.TitleFragment"
-        android:label="fragment_title"
+        android:label="Home"
         tools:layout="@layout/fragment_title" >
         <action
             android:id="@+id/action_titleFragment2_to_gameFragment2"
@@ -35,6 +35,6 @@
     <fragment
         android:id="@+id/GameWon"
         android:name="com.example.navigation.GameWonFragment"
-        android:label="fragment_game_won"
+        android:label="Game Won"
         tools:layout="@layout/fragment_game_won" />
 </navigation>

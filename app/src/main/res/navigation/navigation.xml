@@ -31,10 +31,26 @@
         <action
             android:id="@+id/action_titleFragment2_to_gameFragment2"
             app:destination="@id/Game" />
+        <action
+            android:id="@+id/action_HomeScreen_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_HomeScreen_to_rulesFragment"
+            app:destination="@id/rulesFragment" />
     </fragment>
     <fragment
         android:id="@+id/GameWon"
         android:name="com.example.navigation.GameWonFragment"
         android:label="Game Won"
         tools:layout="@layout/fragment_game_won" />
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.example.navigation.RulesFragment"
+        android:label="Rules"
+        tools:layout="@layout/fragment_rules"></fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.navigation.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about"></fragment>
 </navigation>

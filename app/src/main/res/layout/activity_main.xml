@@ -9,23 +9,29 @@
         android:id="@+id/MainLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-       <fragment
-           android:id="@+id/NavHost"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:name="androidx.navigation.fragment.NavHostFragment"
-           app:defaultNavHost="true"
-           app:navGraph="@navigation/navigation" />
+
+        <fragment
+            android:id="@+id/NavHost"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/navigation" />
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/my_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:elevation="4dp"
+            app:navigationContentDescription="@string/nav_app_bar_navigate_up_description"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
